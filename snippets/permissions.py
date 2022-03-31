@@ -12,5 +12,5 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
 
-        # 只有该snippet的所有者才允许写权限。
+        # 只有该snippet的所有者才允许写权限
         return obj.owner == request.user
